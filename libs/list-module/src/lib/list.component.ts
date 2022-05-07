@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import {
   ClassCombination,
   ClassCombinationService,
@@ -10,21 +11,21 @@ import { Observable } from 'rxjs';
   template: `
     <strong>Filters</strong>
 
-    <div class="filters">
+    <form [formGroup]="filterForm" class="filters">
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput />
+        <input formControlName="name" matInput />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Base class</mat-label>
-        <input matInput />
+        <input formControlName="baseClass" matInput />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Second class</mat-label>
-        <input matInput />
+        <input formControlName="secondClass" matInput />
       </mat-form-field>
-      <mat-slide-toggle>Played</mat-slide-toggle>
-    </div>
+      <mat-slide-toggle formControlName="played">Played</mat-slide-toggle>
+    </form>
 
     <list-item
       [classCombinations]="classCombinations$ | async"
@@ -50,10 +51,23 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
   classCombinations$: Observable<ClassCombination[]> | undefined;
-  constructor(private classCombinationService: ClassCombinationService) {}
+  filterForm = this.fb.group({
+    name: '',
+    baseClass: '',
+    secondClass: '',
+    played: false,
+  });
+
+  constructor(
+    private classCombinationService: ClassCombinationService,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.classCombinations$ = this.classCombinationService.classCombinations$;
+    this.filterForm.valueChanges.subscribe((filterCriteria) =>
+      this.classCombinationService.filterClassCombinations(filterCriteria)
+    );
   }
 
   play(name: string): void {

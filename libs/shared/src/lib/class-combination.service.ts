@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+type Nullable<T> = { [K in keyof T]: T[K] | null };
+
 export interface ClassCombination {
   baseClass: string;
   secondClass: string;
@@ -62,5 +64,21 @@ export class ClassCombinationService {
         this.classCombinations$.next(this.classCombinations);
       }
     });
+  }
+
+  public filterClassCombinations(
+    filterCriteria: Nullable<Partial<ClassCombination>>
+  ): void {
+    this.classCombinations$.next(
+      this.classCombinations.filter(
+        (classCombination) =>
+          classCombination.name.includes(filterCriteria.name || '') &&
+          classCombination.baseClass.includes(filterCriteria.baseClass || '') &&
+          classCombination.secondClass.includes(
+            filterCriteria.secondClass || ''
+          ) &&
+          classCombination.played === filterCriteria.played
+      )
+    );
   }
 }
