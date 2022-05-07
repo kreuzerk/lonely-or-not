@@ -1,7 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "header-module": "libs/header-module",
+    "list-module": "libs/list-module",
     "modules": "apps/modules",
-    "modules-e2e": "apps/modules-e2e"
+    "modules-e2e": "apps/modules-e2e",
+    "shared": "libs/shared"
   }
 }

@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@lonely-or-not/header-module": ["libs/header-module/src/index.ts"],
+      "@lonely-or-not/list-module": ["libs/list-module/src/index.ts"],
+      "@lonely-or-not/shared": ["libs/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/list-module",
+  "sourceRoot": "libs/list-module/src",
+  "prefix": "lonely-or-not",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/list-module"],
+      "options": {
+        "jestConfig": "libs/list-module/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/list-module/src/**/*.ts",
+          "libs/list-module/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
