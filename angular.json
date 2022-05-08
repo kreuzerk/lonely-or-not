@@ -1,13 +1,13 @@
 {
   "version": 2,
   "projects": {
-    "header-module": "libs/header-module",
-    "home-module": "libs/home-module",
-    "list-module": "libs/list-module",
+    "module-header": "libs/module/header",
+    "module-home": "libs/module/home",
+    "module-list": "libs/module/list",
+    "module-shell": "libs/module/shell",
     "modules": "apps/modules",
     "modules-e2e": "apps/modules-e2e",
     "shared": "libs/shared",
-    "shell-module": "libs/shell-module",
     "standalone": "apps/standalone",
     "standalone-e2e": "apps/standalone-e2e"
   }

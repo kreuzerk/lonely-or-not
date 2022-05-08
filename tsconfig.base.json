@@ -15,11 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lonely-or-not/header-module": ["libs/header-module/src/index.ts"],
-      "@lonely-or-not/home-module": ["libs/home-module/src/index.ts"],
-      "@lonely-or-not/list-module": ["libs/list-module/src/index.ts"],
-      "@lonely-or-not/shared": ["libs/shared/src/index.ts"],
-      "@lonely-or-not/shell-module": ["libs/shell-module/src/index.ts"]
+      "@lonely-or-not/module-header": ["libs/module/header/src/index.ts"],
+      "@lonely-or-not/module-home": ["libs/module/home/src/index.ts"],
+      "@lonely-or-not/module-list": ["libs/module/list/src/index.ts"],
+      "@lonely-or-not/module-shell": ["libs/module/shell/src/index.ts"],
+      "@lonely-or-not/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

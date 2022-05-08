@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/module/header",
+  "sourceRoot": "libs/module/header/src",
+  "prefix": "lonely-or-not",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/module/header"],
+      "options": {
+        "jestConfig": "libs/module/header/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/module/header/src/**/*.ts",
+          "libs/module/header/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
