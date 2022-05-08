@@ -57,11 +57,14 @@ export class ClassCombinationService {
     this.classCombinations
   );
 
-  public updateClassCombinationPlayed(name: string): void {
+  public updateClassCombinationPlayed(
+    name: string,
+    filterCriteria: Nullable<Partial<ClassCombination>> = {}
+  ): void {
     this.classCombinations.forEach((classCombination) => {
       if (classCombination.name === name) {
         classCombination.played = true;
-        this.classCombinations$.next(this.classCombinations);
+        this.filterClassCombinations(filterCriteria);
       }
     });
   }

@@ -71,6 +71,10 @@ export class ListComponent implements OnInit {
   }
 
   play(name: string): void {
-    this.classCombinationService.updateClassCombinationPlayed(name);
+    this.classCombinationService.updateClassCombinationPlayed(name, {
+      ...this.filterForm.value,
+      played: true,
+    });
+    this.filterForm.get('played')?.setValue(true);
   }
 }
