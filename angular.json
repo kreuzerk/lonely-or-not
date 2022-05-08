@@ -7,6 +7,7 @@
     "modules": "apps/modules",
     "modules-e2e": "apps/modules-e2e",
     "shared": "libs/shared",
+    "shell-module": "libs/shell-module",
     "standalone": "apps/standalone",
     "standalone-e2e": "apps/standalone-e2e"
   }
