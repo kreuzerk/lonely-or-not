@@ -8,8 +8,10 @@
     "start": "nx serve",
     "start:standalone": "nx serve --project standalone",
     "build": "nx build",
+    "build:standalone": "nx build --project standalone",
     "test": "nx test",
-    "analyze:modules": "nx build --stats-json && webpack-bundle-analyzer dist/apps/modules/stats.json"
+    "analyze:modules": "nx build --stats-json && webpack-bundle-analyzer dist/apps/modules/stats.json",
+    "analyze:standalone": "npm run build:standalone -- --stats-json && webpack-bundle-analyzer dist/apps/standalone/stats.json"
   },
   "private": true,
   "dependencies": {
