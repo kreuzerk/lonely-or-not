@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "header-module": "libs/header-module",
+    "home-module": "libs/home-module",
     "list-module": "libs/list-module",
     "modules": "apps/modules",
     "modules-e2e": "apps/modules-e2e",
