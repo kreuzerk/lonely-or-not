@@ -19,7 +19,12 @@
       "@lonely-or-not/module-home": ["libs/module/home/src/index.ts"],
       "@lonely-or-not/module-list": ["libs/module/list/src/index.ts"],
       "@lonely-or-not/module-shell": ["libs/module/shell/src/index.ts"],
-      "@lonely-or-not/shared": ["libs/shared/src/index.ts"]
+      "@lonely-or-not/shared": ["libs/shared/src/index.ts"],
+      "@lonely-or-not/standalone/header": [
+        "libs/standalone/header/src/index.ts"
+      ],
+      "@lonely-or-not/standalone/home": ["libs/standalone/home/src/index.ts"],
+      "@lonely-or-not/standalone/list": ["libs/standalone/list/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

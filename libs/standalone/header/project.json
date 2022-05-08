@@ -1,14 +1,14 @@
 {
   "projectType": "library",
-  "root": "libs/module/shell",
-  "sourceRoot": "libs/module/shell/src",
+  "root": "libs/standalone/header",
+  "sourceRoot": "libs/standalone/header/src",
   "prefix": "lonely-or-not",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/module/shell"],
+      "outputs": ["coverage/libs/standalone/header"],
       "options": {
-        "jestConfig": "libs/module/shell/jest.config.js",
+        "jestConfig": "libs/standalone/header/jest.config.js",
         "passWithNoTests": true
       }
     },
@@ -16,8 +16,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/module/shell/src/**/*.ts",
-          "libs/module/shell/src/**/*.html"
+          "libs/standalone/header/src/**/*.ts",
+          "libs/standalone/header/src/**/*.html"
         ]
       }
     }
