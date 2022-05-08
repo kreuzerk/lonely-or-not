@@ -1,0 +1,28 @@
+{
+  "root": "apps/standalone-e2e",
+  "sourceRoot": "apps/standalone-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/standalone-e2e/cypress.json",
+        "devServerTarget": "standalone:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "standalone:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/standalone-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["standalone"]
+}
